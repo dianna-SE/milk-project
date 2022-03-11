@@ -1,0 +1,59 @@
+header {
+    font-size: 120px;
+    letter-spacing: 30px;
+    color: #b8aeaa;
+    font-family: bebas;
+    text-align: center;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.login > div > header > img {
+    object-fit: contain;
+    width: 70px;
+    height: auto;
+    margin-bottom: -5px;
+    transition: ease-out 2s;
+}
+
+.login_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.login_logo > img {
+    width: 500px;
+    height: auto;
+    margin-bottom: -100px;
+    transition: ease-out 2s;
+}
+
+.login_logo > button {
+    display: flex;
+    width: 160px;
+    background-color: #cec6c6;
+    border-radius: 50px;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    margin: 34px;
+}
+
+.login_logo > button:hover {
+    background-color: #beb8b5;
+    color: #ffffff;
+}
+
+b {
+    font-size: 20px;
+    letter-spacing: 4px;
+}

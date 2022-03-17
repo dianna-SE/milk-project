@@ -7,6 +7,7 @@ import { Avatar } from "@material-ui/core";
 import MicIcon from "@material-ui/icons/Mic";
 import HeadsetIcon from "@material-ui/icons/Headset";
 import SettingsIcon from "@material-ui/icons/Settings";
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import db, { auth } from './firebase'
@@ -40,13 +41,13 @@ function Sidebar() {
     <div className="sidebar">
         <div className="sidebar_top">
             <h3>MILK</h3>
-            <ExpandMoreIcon />
+            <MoreHorizIcon fontSize='medium' />
         </div>
 
         <div className="sidebar_channels">
             <div className="sidebar_channelsHeader">
                 <div className="sidebar_header">
-                    <ExpandMoreIcon />
+                    <div><ExpandMoreIcon /></div>
                     <h4>Text Channels</h4>
                 </div>
 
@@ -65,10 +66,10 @@ function Sidebar() {
         </div>
 
         <div className="sidebar_profile">
-            <Avatar onClick={() => auth.signOut()} src={user.photo}/>
+            <div className='avatar'><Avatar onClick={() => auth.signOut()} src={user.photo}/></div>
             <div className="sidebar_profileInfo">
                 <h3>{user.displayName}</h3>
-                <p>#{user.uid.substring(0,4)}</p>
+                <p>@{user.uid.substring(0,4)}</p>
             </div>
 
             <div className="sidebar_profileIcons">

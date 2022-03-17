@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Chat.css'
 import ChatHeader from './ChatHeader'
-import AddCircleIcon from '@material-ui/icons/AddCircle'
-import CardGiftcardIcon from '@material-ui/icons/CardGiftcard'
-import GifIcon from '@material-ui/icons/Gif'
-import EmojiEmoticonsIcon from '@material-ui/icons/EmojiEmotions'
 import Message from './Message'
 import { useSelector } from 'react-redux'
 import { selectUser } from './features/userSlice'
@@ -12,6 +8,12 @@ import { selectChannelId, selectChannelName } from './features/appSlice'
 import db from './firebase'
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
+import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate'
+import EmojiEmoticonsIcon from '@material-ui/icons/EmojiEmotions'
+import SportsEsportsIcon from '@material-ui/icons/SportsEsports'
+import { Picker } from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css'
+
 
 function Chat() {
     const user = useSelector(selectUser);
@@ -20,6 +22,13 @@ function Chat() {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
 
+    const [inputStr, setInputStr] = useState('');
+    const [showPicker, setShowPicker] = useState('');
+
+    const onEmojiClick = (event, emojiObject) => {
+        setInputStr(prevInput => prevInput + emojiObject.emoji);
+        setShowPicker(false);
+    }
     useEffect(() => {
         if (channelId) {
             db.collection('channels')
@@ -55,17 +64,27 @@ function Chat() {
                 />
             ))}
         </div>
-
+        <div className='emojiIcon'>{showPicker && <Picker 
+                        set='apple'
+                        title='select your emooji' 
+                        color='#ae65c5'
+                        style={{ height: '100%', width: '100%'}}
+                        emoji='cow'
+                        emojiSize={20}
+                        onEmojiClick={onEmojiClick} 
+                        />}
+        </div>
         <div className="chat_input">
                 <div className="circleIcon">
-                    <AddCircleIcon fontSize="small" />
+                    <EmojiEmoticonsIcon fontSize="small" onClick={() => setShowPicker(val => !val)}/>
                 </div>
                 <form>
                     <input
-                        value={input} 
+                        value={input, inputStr} 
                         disabled={!channelId}
-                        onChange={e => setInput(e.target.value)}
-                        placeholder={`Message #${channelName}`}
+                        onChange={e => setInput(e.target.value) || setInputStr(e.target.value)}
+                        placeholder={`message @${channelName}`}
+                        onClick={() => setShowPicker(val => !val)}
                     />
 
                     <button
@@ -79,10 +98,12 @@ function Chat() {
                 </form>
 
                 <div className="chat_inputIcons">
-                    <CardGiftcardIcon fontSize="small" />
-                    <GifIcon fontSize="medium" />
-                    <EmojiEmoticonsIcon fontSize="small" />
+                    <AddPhotoAlternateIcon fontSize="medium" />
+                    <SportsEsportsIcon fontSize='medium' />
                 </div>
+                
+                
+                
         </div>
     </div>
   )

@@ -1,19 +1,22 @@
 .sidebar > div > h3 {
     letter-spacing: 5px;
     font-family: bebas;
+    font-size: 24px;
 }
 .sidebar {
     display: flex;
     flex-direction: column;
     flex: 0.25;
     height: 100vh;
+    font-family: bebas;
+    letter-spacing: 3px;
 }
 
 .sidebar_top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 26.5px;
     color: #ffffff;
 }
 
@@ -47,6 +50,11 @@
 
 .sidebar_header > h4 {
     padding: 5px;
+    font-size: 16px;
+}
+
+.sidebar_header > div:hover {
+    cursor: pointer;
 }
 
 .sidebar_profile {
@@ -68,10 +76,12 @@
 }
 
 .sidebar_profileInfo > p {
-    color: rgb(138, 138, 138);
+    color: rgb(255, 255, 255);
     margin-top: 10px;
     margin-left: 5px;
+    letter-spacing: 2px;
 }
+
 
 .sidebar_profileIcons > .MuiSvgIcon-root {
     padding: 10px;
@@ -79,25 +89,29 @@
     transition: ease-out 0.1s;
     border-radius: 100%;
     margin: 5px;
+    font-size: large;
 }
 
 .sidebar_profileIcons > .MuiSvgIcon-root:hover {
     border-radius: 100%;
     border: 1px;
-    background-color: #b6abab;
+    background-color: #8f8886;
     color: white;
     transition: ease-out 0.1s;
 }
 
-
-.sidebar, .sidebar_top, .sidebar_channelsHeader, .sidebar_profile {
-    background-color: #d6cbc7;
-}
-
 .sidebar_top {
-    border-bottom: 2px solid #e7dfdf;
+    border-bottom: 1px solid #dfdfdf;
 }
 
 .sidebar_profile {
-    border-top: 2px solid  #e7dfdf;
+    border-top: 1px solid  #eeeeee;
+}
+
+.avatar {
+    cursor: pointer;
+}
+
+.sidebar, .sidebar_top, .sidebar_channelsHeader, .sidebar_profile {
+    background-color: #a39b98;
 }

@@ -4,6 +4,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications'
 import SearchRoundedIcon from '@material-ui/icons/SearchRounded'
 import HelpRoundedIcon from '@material-ui/icons/HelpRounded'
 import jug from './images/jug.png'
+import ContactsIcon from '@material-ui/icons/Contacts';
 
 function ChatHeader({ channelName }) {
   return (
@@ -27,8 +28,7 @@ function ChatHeader({ channelName }) {
                 </form>
                 <SearchRoundedIcon />
             </div>
-
-            <HelpRoundedIcon />
+            <ContactsIcon fontSize='small'/>
         </div>
     </div>
   )

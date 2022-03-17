@@ -7,7 +7,7 @@
     display: flex;
     flex-direction: column;
     flex: 0.75;
-    background-color: #c0b6b2;
+    background-color: black;
     height: 100vh;
 }
 
@@ -24,31 +24,29 @@
 }
 
 .chat_input {
-    color: rgb(255, 255, 255);
+    color: rgb(94, 94, 94);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1px;
     border-radius: 50px;
-    margin: 20px;
+    margin: 25px;
     border-top: 0.5px solid #d6cbc7;
-    background-color: #c4b9b5;
+    background-color: #f8f8f8;
 }
 
 .chat_input > form > input {
-    padding: 15px;
+    padding: 12px;
     background: transparent;
     border: none;
     width: 100%;
     outline-width: 0;
-    color: white;
+    color: rgb(94, 94, 94);
     font-size: medium;
-    letter-spacing: 4px;
-    font-family: bebas;
 }
 
 .chat_input > form > input::placeholder {
-    color: rgb(255, 255, 255);
+    color: rgb(114, 114, 114);
 }
 
 .chat_input > form {
@@ -74,14 +72,25 @@
     border-radius: 100%;
     cursor: pointer;
     transition: ease-out 0.1s;
-    background-color: #a79d9d;
-    color: white;
+    background-color: #dfdfdf;
 }
 
-input {
-    transition: ease-out 5s;
+.chat_input > form > input {
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
 }
 
 .chat {
     background-color: #d1c7c4;
+}
+
+.emojiIcon {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -10px;
+    transition: ease-out 0.2s;
+    padding-right: 45px;
+    padding-left: 40px;
+    padding-top: 20px;
 }

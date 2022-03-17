@@ -15,20 +15,23 @@ import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css'
 
 
+
+
 function Chat() {
     const user = useSelector(selectUser);
     const channelId = useSelector(selectChannelId);
     const channelName = useSelector(selectChannelName);
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState('');
     const [messages, setMessages] = useState([]);
 
     const [inputStr, setInputStr] = useState('');
-    const [showPicker, setShowPicker] = useState('');
+    const [showPicker, setShowPicker] = useState(false);
 
     const onEmojiClick = (event, emojiObject) => {
         setInputStr(prevInput => prevInput + emojiObject.emoji);
         setShowPicker(false);
     }
+
     useEffect(() => {
         if (channelId) {
             db.collection('channels')
@@ -45,7 +48,7 @@ function Chat() {
 
         db.collection("channels").doc(channelId).collection("messages").add({
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            message: input,
+            message: input + inputStr,
             user: user,
         });
 
@@ -54,7 +57,9 @@ function Chat() {
 
   return (
     <div className="chat">
+        
         <ChatHeader channelName={channelName} />
+        
         <div className="chat_messages">
             {messages.map((message) => (
                 <Message 
@@ -64,38 +69,45 @@ function Chat() {
                 />
             ))}
         </div>
-        <div className='emojiIcon'>{showPicker && <Picker 
+        <div className='emojiIcon'>
+            {showPicker && <Picker
                         set='apple'
                         title='select your emooji' 
                         color='#ae65c5'
-                        style={{ height: '100%', width: '100%'}}
+                        style={{ height: '100%', width: '110%'}}
                         emoji='cow'
-                        emojiSize={20}
-                        onEmojiClick={onEmojiClick} 
+                        emojiSize={24}
+                        onEmojiClick={onEmojiClick}
+                        onSelect={console.log(onEmojiClick)}
                         />}
         </div>
         <div className="chat_input">
                 <div className="circleIcon">
-                    <EmojiEmoticonsIcon fontSize="small" onClick={() => setShowPicker(val => !val)}/>
-                </div>
-                <form>
-                    <input
-                        value={input, inputStr} 
-                        disabled={!channelId}
-                        onChange={e => setInput(e.target.value) || setInputStr(e.target.value)}
-                        placeholder={`message @${channelName}`}
+                    <EmojiEmoticonsIcon 
+                        fontSize="small" 
                         onClick={() => setShowPicker(val => !val)}
                     />
+                </div>
 
+                <form>
+                    <input
+                        value={input}
+                        onChange={e => setInput(e.target.value)} 
+                        disabled={!channelId}
+                        placeholder={`message @${channelName}`}
+                    />
                     <button
                         disabled={!channelId}
                         className="chat_inputButton" 
                         type='submit'
                         onClick={sendMessage}
+                        cleanOnEnter
                     >
                         Send Message
                     </button>
                 </form>
+
+                
 
                 <div className="chat_inputIcons">
                     <AddPhotoAlternateIcon fontSize="medium" />

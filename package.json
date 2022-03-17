@@ -11,11 +11,15 @@
     "@testing-library/user-event": "^7.2.1",
     "emoji-mart": "^3.0.1",
     "emoji-picker-react": "^3.5.1",
+    "emojione-picker": "^2.2.2",
+    "emojionearea": "^3.4.2",
     "firebase": "^9.6.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-input-emoji": "^4.0.9",
     "react-redux": "^7.2.6",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "rn-emoji-keyboard": "^0.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

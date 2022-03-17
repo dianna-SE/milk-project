@@ -18,15 +18,14 @@ function ChatHeader({ channelName }) {
             </h3>
         </div>
 
-
         <div className="chatHeader_right">
             <NotificationsIcon />
 
             <div className="chatHeader_search">
+            <SearchRoundedIcon />
                 <form>
                     <input placeholder="Search" />
                 </form>
-                <SearchRoundedIcon />
             </div>
             <ContactsIcon fontSize='small'/>
         </div>

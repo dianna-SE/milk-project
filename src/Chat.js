@@ -11,8 +11,9 @@ import 'firebase/compat/firestore'
 import AddPhotoAlternateIcon from '@material-ui/icons/AddPhotoAlternate'
 import EmojiEmoticonsIcon from '@material-ui/icons/EmojiEmotions'
 import SportsEsportsIcon from '@material-ui/icons/SportsEsports'
-import { Picker } from 'emoji-mart';
+import SendIcon from '@material-ui/icons/Send'
 import 'emoji-mart/css/emoji-mart.css'
+import { Picker } from 'emoji-mart'
 
 
 
@@ -31,6 +32,7 @@ function Chat() {
         setInputStr(prevInput => prevInput + emojiObject.emoji);
         setShowPicker(false);
     }
+    console.log(onEmojiClick);
 
     useEffect(() => {
         if (channelId) {
@@ -48,11 +50,11 @@ function Chat() {
 
         db.collection("channels").doc(channelId).collection("messages").add({
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-            message: input + inputStr,
+            message: inputStr,
             user: user,
         });
 
-        setInput("");
+        setInputStr('');
     };
 
   return (
@@ -78,11 +80,12 @@ function Chat() {
                         emoji='cow'
                         emojiSize={24}
                         onEmojiClick={onEmojiClick}
-                        onSelect={console.log(onEmojiClick)}
                         />}
         </div>
+
+        
         <div className="chat_input">
-                <div className="circleIcon">
+                <div className="leftIcon">
                     <EmojiEmoticonsIcon 
                         fontSize="small" 
                         onClick={() => setShowPicker(val => !val)}
@@ -91,8 +94,8 @@ function Chat() {
 
                 <form>
                     <input
-                        value={input}
-                        onChange={e => setInput(e.target.value)} 
+                        value={inputStr}
+                        onChange={e => setInputStr(e.target.value)} 
                         disabled={!channelId}
                         placeholder={`message @${channelName}`}
                     />
@@ -101,7 +104,6 @@ function Chat() {
                         className="chat_inputButton" 
                         type='submit'
                         onClick={sendMessage}
-                        cleanOnEnter
                     >
                         Send Message
                     </button>
@@ -111,7 +113,10 @@ function Chat() {
 
                 <div className="chat_inputIcons">
                     <AddPhotoAlternateIcon fontSize="medium" />
-                    <SportsEsportsIcon fontSize='medium' />
+                    <SendIcon
+                        type='submit'
+                        onClick={sendMessage}
+                    />
                 </div>
                 
                 

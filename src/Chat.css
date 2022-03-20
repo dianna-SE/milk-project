@@ -1,6 +1,8 @@
-.circleIcon {
+.leftIcon {
     margin-left: 10px;
     cursor: pointer;
+    padding: 10px;
+    display: flex;
 }
 
 .chat {

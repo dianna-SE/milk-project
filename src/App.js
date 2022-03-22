@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Chat from './Chat';
 import Sidebar from './Sidebar.js';
+import Settings from './Settings.js';
 import { selectUser } from './features/userSlice';
 import Login from './Login';
 import { login, logout } from './features/userSlice'
@@ -41,6 +42,7 @@ function App() {
         <>
           <Sidebar />
           <Chat />
+          <Settings />
         </>
       ): (
           <Login />

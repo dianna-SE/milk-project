@@ -59,10 +59,6 @@
     display: none;
 }
 
-.chat_input > form > button[type='submit'] {
-    transition: ease-out 5s;
-}
-
 .chat_inputIcons > .MuiSvgIcon-root {
     padding: 5px;
     margin-right: 10px;
@@ -89,10 +85,9 @@
 
 .emojiIcon {
     display: flex;
-    justify-content: flex-end;
     margin-bottom: -10px;
     transition: ease-out 0.2s;
-    padding-right: 45px;
-    padding-left: 40px;
-    padding-top: 20px;
+    margin-bottom: -10px;
+    margin-right: 20px;
+    margin-left: 20px;
 }

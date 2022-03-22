@@ -11,10 +11,23 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import db, { auth } from './firebase'
+import ToggleOffIcon from '@material-ui/icons/ToggleOff';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
+library.add(fas)
+
 
 function Sidebar() {
   const user = useSelector(selectUser);
   const [channels, setChannels] = useState([]);
+  const [seeSettings, setSeeSettings] = useState(false);
+
+  const settingsClick = (event) => {
+    document.getElementById('settings').style.display = 'block'
+    setSeeSettings(false);
+}
 
   useEffect(() => {
       db.collection("channels").onSnapshot((snapshot) => 
@@ -37,22 +50,31 @@ function Sidebar() {
       }
   };
 
+function showSettings() { 
+    document.getElementById('settings').style.display = 'block'
+  }
+ 
+
   return (
     <div className="sidebar">
         <div className="sidebar_top">
             <h3>MILK</h3>
-            <MoreHorizIcon fontSize='medium' />
+            <MoreHorizIcon fontSize='medium' onClick={''}/>
+            <div className='settingsIcon' id='settings' >
+                SETTINGS
+            </div>
         </div>
-
         <div className="sidebar_channels">
             <div className="sidebar_channelsHeader">
                 <div className="sidebar_header">
                     <div><ExpandMoreIcon /></div>
                     <h4>Text Channels</h4>
                 </div>
-
-            <AddIcon onClick={handleAddChannel} className="sidebar_addChannel" />
-            </div>
+                    <AddIcon 
+                        onClick={handleAddChannel} 
+                        className="sidebar_addChannel" 
+                    />
+        </div>
 
             <div className="sidebar_channelsList">
                 {channels.map(({ id, channel }) => (
@@ -64,9 +86,10 @@ function Sidebar() {
                 ))}
             </div>
         </div>
-
         <div className="sidebar_profile">
-            <div className='avatar'><Avatar onClick={() => auth.signOut()} src={user.photo}/></div>
+            <div className='avatar'>
+                <Avatar onClick={() => auth.signOut()} src={user.photo}/>
+            </div>
             <div className="sidebar_profileInfo">
                 <h3>{user.displayName}</h3>
                 <p>@{user.uid.substring(0,4)}</p>
@@ -75,7 +98,9 @@ function Sidebar() {
             <div className="sidebar_profileIcons">
                 <MicIcon />
                 <HeadsetIcon />
-                <SettingsIcon />
+                <ToggleOffIcon fontSize="medium"
+                />
+                
             </div>
         </div>
 

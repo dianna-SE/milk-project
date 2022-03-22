@@ -20,6 +20,10 @@
     color: #ffffff;
 }
 
+.sidebar_top:hover {
+    cursor: pointer;
+}
+
 .sidebar_channels {
     flex: 1;
     margin-right: 10px;
@@ -110,6 +114,19 @@
 
 .avatar {
     cursor: pointer;
+}
+
+.settingsIcon {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 100px;
+    padding: 30px;
+    background-color: white;
+    margin: 20px;
+    margin-left: 50px;
+    height: 20%;
+    border-radius: 20px;
 }
 
 .sidebar, .sidebar_top, .sidebar_channelsHeader, .sidebar_profile {

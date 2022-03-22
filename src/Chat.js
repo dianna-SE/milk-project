@@ -28,11 +28,9 @@ function Chat() {
     const [inputStr, setInputStr] = useState('');
     const [showPicker, setShowPicker] = useState(false);
 
-    const onEmojiClick = (event, emojiObject) => {
-        setInputStr(prevInput => prevInput + emojiObject.emoji);
-        setShowPicker(false);
-    }
-    console.log(onEmojiClick);
+    const onEmojiClick = (emoji) => {
+        setInputStr(inputStr + emoji.native);
+      };
 
     useEffect(() => {
         if (channelId) {
@@ -59,7 +57,6 @@ function Chat() {
 
   return (
     <div className="chat">
-        
         <ChatHeader channelName={channelName} />
         
         <div className="chat_messages">
@@ -76,10 +73,10 @@ function Chat() {
                         set='apple'
                         title='select your emooji' 
                         color='#ae65c5'
-                        style={{ height: '100%', width: '110%'}}
+                        style={{ height: '100%', width: '100%'}}
                         emoji='cow'
                         emojiSize={24}
-                        onEmojiClick={onEmojiClick}
+                        onSelect={onEmojiClick}
                         />}
         </div>
 
@@ -123,6 +120,7 @@ function Chat() {
                 
         </div>
     </div>
+    
   )
 }
 

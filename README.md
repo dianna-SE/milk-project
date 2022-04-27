@@ -2,9 +2,7 @@
 
 ## Getting Started
 
-Development: Ongoing
-
-This messaging website was developed using HTML, CSS, and React framework, along with Redux library to maintain the application and NodeJS for user login authentication. It is created for desktop compatibility only for the time being. Users can login to the website using a gmail account.
+This messaging website was developed using HTML, CSS, and React framework, along with Redux library to maintain the application and NodeJS for user login authentication. It is created for desktop compatibility only for the time being. Users can login to the website using a gmail account. Please note that development for the website is not fully completed.
 
 https://milk-messaging.web.app/
 

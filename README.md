@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-This messaging website was developed using HTML, CSS, and React framework, along with Redux library to maintain the application and NodeJS for user login authentication. It is created for desktop compatibility only for the time being.  Please note that development for the website is not fully completed.
+This messaging website was developed using HTML, CSS, and React framework, along with Redux library to maintain the application and NodeJS for user login authentication. Please note that development for the website is not fully completed. Responsive web design media queries will be implemented in future development.
 
 Users must login to the website using a gmail account in order to gain access to the messaging website. 
 

@@ -6,10 +6,10 @@ This messaging website was developed using HTML, CSS, and React framework, along
 
 Users must login to the website using a gmail account in order to gain access to the messaging website. 
 
-Working: 
+#### Working: 
 Log in user authentification, messages, chat box, sidebar channels, add channels, emoji library, send messages.
 
-In development: 
+#### In development: 
 Search bar, media queries, delete channels, upload images, online user list.
 
 https://milk-messaging.web.app/

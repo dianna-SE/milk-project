@@ -33,4 +33,4 @@ Deployed using Firebase. Package.json and index.html were configured to maintain
 * [JavaScript](https://www.javascript.com/) - Used to program functions for player movement, timer, and sprite animations.
 * [React](https://reactjs.org/) - Used as the main application framework.
 * [Redux](https://react-redux.js.org/) - Used to organize and maintain application.
-* [Firebase] (https://firebase.google.com/) - Used to deploy website.
+* [Firebase] (https://firebase.google.com/) - Used to access database and deploy website.

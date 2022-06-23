@@ -28,9 +28,15 @@ Deployed using Firebase. Package.json and index.html were configured to maintain
 
 ## Built With
 
-* [HTML] - Used to display features onto a website.
-* [CSS] - Used to style website.
-* [JavaScript](https://www.javascript.com/) - Used to program functions for player movement, timer, and sprite animations.
-* [React](https://reactjs.org/) - Used as the main application framework.
-* [Redux](https://react-redux.js.org/) - Used to organize and maintain application.
-* [Firebase] (https://firebase.google.com/) - Used to access database and deploy website.
+* [HTML] 
+* [CSS] 
+* [JavaScript](https://www.javascript.com/) 
+* [React](https://reactjs.org/) 
+* [Redux](https://react-redux.js.org/) 
+* [Firebase] (https://firebase.google.com/)
+
+## Views
+![milkss](https://user-images.githubusercontent.com/97206862/175226575-e6a78ec7-045f-4a7f-ba84-d4d591f9cc4f.PNG)
+![milkchatss](https://user-images.githubusercontent.com/97206862/175226581-a495be19-7bfb-4fa2-81eb-83bc60b1b073.PNG)
+
+

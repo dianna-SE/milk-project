@@ -6,6 +6,11 @@ MILK is a messaging website that allows users to log in, send messages, emojis a
 
 Users must login to the website using a gmail account in order to gain access to the messaging website. 
 
+#### Reponsibilities:
+• Wrote a messaging application using React and Redux to implement architecture design while maintaining an efficient application data flow by 20%.
+• Utilized React to handle user input, display chat logs, and send messages and emojis that maintained component reusability and quick reloading response.
+• Used JavaScript to establish a dynamic client-sided architecture that reduced server-side workload and increased responsiveness.
+
 #### Working: 
 Log in user authentification, messages, chat box, sidebar channels, add channels, emoji library, send messages.
 

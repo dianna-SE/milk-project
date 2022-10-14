@@ -13,10 +13,10 @@ Users must login to the website using a gmail account in order to gain access to
 
 • Used JavaScript to establish a dynamic client-sided architecture that reduced server-side workload and increased responsiveness.
 
-### Working: 
+## Working: 
 Log in user authentification, messages, chat box, sidebar channels, add channels, emoji library, send messages.
 
-### In development: 
+## In development: 
 Search bar, media queries, delete channels, upload images, online user list.
 
 https://milk-messaging.web.app/

@@ -8,7 +8,9 @@ Users must login to the website using a gmail account in order to gain access to
 
 #### Reponsibilities:
 • Wrote a messaging application using React and Redux to implement architecture design while maintaining an efficient application data flow by 20%.
+
 • Utilized React to handle user input, display chat logs, and send messages and emojis that maintained component reusability and quick reloading response.
+
 • Used JavaScript to establish a dynamic client-sided architecture that reduced server-side workload and increased responsiveness.
 
 #### Working: 
